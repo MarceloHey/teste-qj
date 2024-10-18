@@ -1,0 +1,11 @@
+# docker-compose.yml
+version: '3'
+services:
+  debt_service:
+    build: ./auth-service
+    ports:
+      - "8000:8000"
+  client_service:
+    build: ./client-service
+    ports:
+      - "8001:8001"
