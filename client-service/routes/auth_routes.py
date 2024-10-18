@@ -1,9 +1,6 @@
-from datetime import datetime, timezone, timedelta
 from flask import Blueprint, request, jsonify
-from app import db
 
 import jwt
-import time
 import os
 import dotenv
 
@@ -19,7 +16,7 @@ from models.models import User
 
 
 @auth.route("/login", methods=["POST"])
-def login():
+def login():   
     data = request.get_json()
 
     existing_user = User.query.filter_by(cpf=data["cpf"]).first()
@@ -33,6 +30,6 @@ def login():
 
     token = jwt.encode(token_payload, secret, algorithm)
     print(token)
-    print(jwt.decode(token, secret, algorithm))
+    print(jwt.decode(token, secret, algorithms=[algorithm]))
 
-    return 200
+    return jsonify({"message": "OK"}), 200

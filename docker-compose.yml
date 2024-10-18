@@ -2,7 +2,7 @@
 version: '3'
 services:
   debt_service:
-    build: ./auth-service
+    build: ./debt-service
     ports:
       - "8000:8000"
   client_service:
