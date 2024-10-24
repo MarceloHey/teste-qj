@@ -8,4 +8,4 @@ services:
   client_service:
     build: ./client-service
     ports:
-      - "8001:8001"
+      - "3001:3001"

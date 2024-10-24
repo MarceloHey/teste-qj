@@ -1,7 +1,7 @@
 from datetime import datetime, timezone, timedelta
 from typing import Optional
 from flask import Blueprint, request, jsonify
-from app import db
+from config import db
 
 # Definir um blueprint para as rotas principais
 user = Blueprint("user", __name__, url_prefix="/user")
